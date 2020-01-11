@@ -30,7 +30,6 @@ public class BuscaTelaInicial {
 		WebElement botaoSelecionado = driver.findElement(By.id("laptopsLink"));
 		actions.moveToElement(botaoSelecionado).click().perform();
 		
-		//driver.findElement(By.id("laptopsLink"));
 		System.out.println("Clicando nos laptops");
 		}
 }
