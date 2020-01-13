@@ -77,10 +77,8 @@ public class CadastroCliente {
 		driver.findElement(By.name("i_agree")).click();
 		System.out.println("Clicou no checkbox");
 
-		
-		
-//		driver.findElement(By.id("register_btnundefined")).click();
-//		System.out.println("Clicou no registrar");
+		driver.findElement(By.id("register_btnundefined")).click();
+		System.out.println("Clicou no registrar");
 
 		// driver.close();
 	}

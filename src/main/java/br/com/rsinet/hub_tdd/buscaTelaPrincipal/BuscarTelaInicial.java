@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 
-public class BuscaTelaInicial {
+public class BuscarTelaInicial {
 	
 	public static WebDriver driver;
 	
@@ -29,8 +29,10 @@ public class BuscaTelaInicial {
 		
 		WebElement botaoSelecionado = driver.findElement(By.id("laptopsLink"));
 		actions.moveToElement(botaoSelecionado).click().perform();
+		System.out.println("Clicando nos laptops, tela inicial");
 		
-		System.out.println("Clicando nos laptops");
-		}
+		driver.findElement(By.id("5")).click();
+		System.out.println("selecionou o laptop");
+	}
 }
 
