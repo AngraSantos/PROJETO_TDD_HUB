@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class Cadastro {
+public class CadastroCliente {
 	
 	@FindBy(how = How.ID, using = "menuUserSVGPath")
 	public WebElement btn_Login;

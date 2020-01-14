@@ -10,13 +10,10 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Home{
+public class Inicio{
 
-	WebDriver driver;
+	final WebDriver driver;
 
-	public Home(WebDriver driver) {
-		this.driver = driver;
-	}
 
 	@FindBy(how = How.NAME, using = "mobile_search")
 	public WebElement txtbx_Buscar;
@@ -30,27 +27,29 @@ public class Home{
 	@FindBy(how = How.LINK_TEXT, using = "CREATE NEW ACCOUNT")
 	public WebElement lnk_CriarUsuario;
 
+	public Inicio(WebDriver driver) {
+		this.driver = driver;
+	}
 	// buscar pela barra de pesquisa.
 	public void buscarCaixaDeTexto(String buscarProduto) {
 
 		txtbx_Buscar.sendKeys(buscarProduto);
 		txtbx_Buscar.sendKeys(Keys.RETURN);
 	}
-// buscar pela tela inicial 
+	// buscar pela tela inicial 
 	public void buscarTelainicial() {
 		lnk_laptop.click();
 	}
 
-//clicar no ligin e criar cadastro
+	//clicar no login e criar cadastro
 	public void clicarBotaoLogin() {
 
 		btn_Login.click();
 
-		WebElement btn_CriarUsuario = driver.findElement(By.linkText("CREATE NEW ACCOUNT"));
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("CREATE NEW ACCOUNT")));
 		Actions Action = new Actions(driver);
-		Action.moveToElement(btn_CriarUsuario).click().perform();
+		Action.moveToElement(lnk_CriarUsuario).click().perform();
 		lnk_CriarUsuario.click();
 	}
 }
