@@ -1,4 +1,4 @@
-package br.com.cucumber.TDD_Projeto;
+package br.com.rsinet.hub_tdd.teste;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
