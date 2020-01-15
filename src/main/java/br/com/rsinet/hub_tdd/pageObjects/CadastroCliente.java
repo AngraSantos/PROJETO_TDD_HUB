@@ -40,9 +40,12 @@ public class CadastroCliente {
 	public WebElement txtbx_Cidade;
 	
 	@FindBy(how = How.NAME, using = "addressRegisterPage")
+	public WebElement txtbx_Endereco;
+	
+	@FindBy(how = How.NAME, using = "state_/_province_/_regionRegisterPage")
 	public WebElement txtbx_Estado;
 	
-	@FindBy(how = How.NAME, using = "addressRegisterPage")
+	@FindBy(how = How.NAME, using = "postal_codeRegisterPage")
 	public WebElement txtbx_CartaoPostal;
 	
 	@FindBy(how = How.NAME, using = "i_agree")
