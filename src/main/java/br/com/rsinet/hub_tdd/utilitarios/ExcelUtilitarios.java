@@ -1,10 +1,8 @@
 package br.com.rsinet.hub_tdd.utilitarios;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -15,8 +13,6 @@ public class ExcelUtilitarios {
 	private static XSSFWorkbook ExcelWBook;
 
 	private static XSSFCell Cell;
-
-	private static XSSFRow Row;
 
 	public static void setExcelFile(String Path, String SheetName) throws Exception {
 
@@ -54,38 +50,4 @@ public class ExcelUtilitarios {
 
 	}
 
-	public static void setCellData(String Result, int RowNum, int ColNum) throws Exception {
-
-		try {
-
-			Row = ExcelWSheet.getRow(RowNum);
-
-			Cell = Row.getCell(ColNum, Row.RETURN_BLANK_AS_NULL);
-
-			if (Cell == null) {
-
-				Cell = Row.createCell(ColNum);
-
-				Cell.setCellValue(Result);
-
-			} else {
-
-				Cell.setCellValue(Result);
-
-			}
-
-			FileOutputStream fileOut = new FileOutputStream(Constante.File_TestData);
-
-			ExcelWBook.write(fileOut);
-
-			fileOut.flush();
-
-			fileOut.close();
-
-		} catch (Exception e) {
-
-			throw (e);
-
-		}
-	}
 }

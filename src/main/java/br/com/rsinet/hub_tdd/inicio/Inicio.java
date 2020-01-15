@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_tdd.pageObjects;
+package br.com.rsinet.hub_tdd.inicio;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
