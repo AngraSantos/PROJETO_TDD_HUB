@@ -10,4 +10,8 @@ public class Produto {
 	@FindBy(how = How.ID, using = "2")
 	public WebElement lnk_laptopPavilion;
 	
+	@FindBy(how = How.ID, using = "21")
+	public WebElement lnk_AltoFalanteHP;
+	
+	
 }

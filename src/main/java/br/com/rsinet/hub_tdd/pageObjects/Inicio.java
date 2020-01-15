@@ -18,8 +18,8 @@ public class Inicio{
 	@FindBy(how = How.NAME, using = "mobile_search")
 	public WebElement txtbx_Buscar;
 
-	@FindBy(how = How.ID, using = "laptopsTxt")
-	public WebElement lnk_laptop;
+	@FindBy(how = How.ID, using = "speakersTxt")
+	public WebElement lnk_CxDeSom;
 
 	@FindBy(how = How.ID, using = "menuUserSVGPath")
 	public WebElement btn_Login;
@@ -37,8 +37,9 @@ public class Inicio{
 		txtbx_Buscar.sendKeys(Keys.RETURN);
 	}
 	// buscar pela tela inicial 
-	public void buscarTelainicial() {
-		lnk_laptop.click();
+	public void buscarTelaInicial() {
+		
+		lnk_CxDeSom.click();
 	}
 
 	//clicar no login e criar cadastro

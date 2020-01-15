@@ -7,8 +7,8 @@ import org.openqa.selenium.support.How;
 public class Buscar {
 	
 	//tela inicial 
-	@FindBy(how = How.ID, using = "laptopsTxt")
-	public WebElement lnk_laptop;
+	@FindBy(how = How.ID, using = "speakersTxt")
+	public WebElement lnk_CxDeSom;
 	
 	//busca pela lupa
 	@FindBy(how = How.NAME, using = "mobile_search")

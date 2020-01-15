@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11696" started-at="2020-01-14T21:58:59 BRT" finished-at="2020-01-14T21:59:11 BRT">
+  <suite name="Default suite" duration-ms="14808" started-at="2020-01-14T22:53:28 BRT" finished-at="2020-01-14T22:53:43 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11696" started-at="2020-01-14T21:58:59 BRT" finished-at="2020-01-14T21:59:11 BRT">
-      <class name="br.com.rsinet.hub_tdd.testes.CadastrarTeste">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTeste@57855c9a]" name="beforeMethod" is-config="true" duration-ms="6394" started-at="2020-01-14T21:58:59 BRT" finished-at="2020-01-14T21:59:06 BRT">
+    <test name="Default test" duration-ms="14808" started-at="2020-01-14T22:53:28 BRT" finished-at="2020-01-14T22:53:43 BRT">
+      <class name="br.com.rsinet.hub_tdd.testes.BuscaPelaTelaIncialTeste">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testes.BuscaPelaTelaIncialTeste@57855c9a]" name="beforeMethod" is-config="true" duration-ms="6669" started-at="2020-01-14T22:53:28 BRT" finished-at="2020-01-14T22:53:35 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="cadastrando()[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTeste@57855c9a]" name="cadastrando" duration-ms="4670" started-at="2020-01-14T21:59:06 BRT" finished-at="2020-01-14T21:59:10 BRT">
+        <test-method status="PASS" signature="BuscandoTeste()[pri:0, instance:br.com.rsinet.hub_tdd.testes.BuscaPelaTelaIncialTeste@57855c9a]" name="BuscandoTeste" duration-ms="7509" started-at="2020-01-14T22:53:35 BRT" finished-at="2020-01-14T22:53:42 BRT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cadastrando -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTeste@57855c9a]" name="afterMethod" is-config="true" duration-ms="603" started-at="2020-01-14T21:59:10 BRT" finished-at="2020-01-14T21:59:11 BRT">
+        </test-method> <!-- BuscandoTeste -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testes.BuscaPelaTelaIncialTeste@57855c9a]" name="afterMethod" is-config="true" duration-ms="601" started-at="2020-01-14T22:53:42 BRT" finished-at="2020-01-14T22:53:43 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- br.com.rsinet.hub_tdd.testes.CadastrarTeste -->
+      </class> <!-- br.com.rsinet.hub_tdd.testes.BuscaPelaTelaIncialTeste -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
