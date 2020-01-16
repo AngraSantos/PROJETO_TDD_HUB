@@ -1,7 +1,7 @@
 package br.com.rsinet.hub_tdd.testes;
 
-import static br.com.rsinet.hub_tdd.inicio.TelaDeAbertura.FechandoJanela;
-import static br.com.rsinet.hub_tdd.inicio.TelaDeAbertura.inicioDriver;
+import static br.com.rsinet.hub_tdd.driver.DriverFactory.FechandoJanela;
+import static br.com.rsinet.hub_tdd.driver.DriverFactory.inicioDriver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -9,22 +9,21 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import br.com.rsinet.hub_tdd.inicio.Inicio;
 import br.com.rsinet.hub_tdd.pageObjects.CadastroCliente;
+import br.com.rsinet.hub_tdd.pageObjects.TelaInicial;
 import br.com.rsinet.hub_tdd.utilitarios.ExcelUtilitarios;
 
 public class CadastrarTeste {
 
 	private WebDriver driver;
 	CadastroCliente cadastroCliente;
-	Inicio telaInicial;
-
-
+	TelaInicial telaInicial;
+	
 	@BeforeMethod
 	public void beforeMethod() throws Exception {
 
 		driver = inicioDriver();
-		telaInicial = PageFactory.initElements(driver, Inicio.class);
+		telaInicial = PageFactory.initElements(driver, TelaInicial.class);
 		cadastroCliente = PageFactory.initElements(driver, CadastroCliente.class);
 		ExcelUtilitarios.setExcelFile("C:\\Users\\angra.souza\\Desktop\\ToolsQAtest\\TDD_Projeto_HUB\\dadosCadastro.xlsx", "Cadastro");
 	}
@@ -80,7 +79,8 @@ public class CadastrarTeste {
 	@AfterMethod
 	public void afterMethod() {
 
-	 FechandoJanela();
+		
+		 FechandoJanela();
 	}
 
 }

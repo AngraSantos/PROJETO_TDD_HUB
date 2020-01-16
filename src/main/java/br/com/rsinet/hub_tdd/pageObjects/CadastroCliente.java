@@ -55,5 +55,7 @@ public class CadastroCliente {
 	public WebElement btn_Registrar;
 	
 }
+
+
 	
 	

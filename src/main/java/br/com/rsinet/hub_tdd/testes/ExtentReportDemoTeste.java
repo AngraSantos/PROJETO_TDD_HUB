@@ -41,6 +41,7 @@ public class ExtentReportDemoTeste {
 
 		driver.get("http://www.google.com.br");
 		System.out.println("title is " + driver.getTitle());
+		
 		Assert.assertTrue(driver.getTitle().contains("Angra"));
 	}
 	

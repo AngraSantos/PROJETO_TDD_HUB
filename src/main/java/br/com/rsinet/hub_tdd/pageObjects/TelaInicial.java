@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_tdd.inicio;
+package br.com.rsinet.hub_tdd.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -10,24 +10,24 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Inicio{
+public class TelaInicial {
 
 	final WebDriver driver;
 
 
 	@FindBy(how = How.NAME, using = "mobile_search")
-	public WebElement txtbx_Buscar;
+	private WebElement txtbx_Buscar;
 
 	@FindBy(how = How.ID, using = "speakersTxt")
-	public WebElement lnk_CxDeSom;
+	private WebElement lnk_CxDeSom;
 
 	@FindBy(how = How.ID, using = "menuUserSVGPath")
-	public WebElement btn_Login;
+	private WebElement btn_Login;
 
 	@FindBy(how = How.LINK_TEXT, using = "CREATE NEW ACCOUNT")
-	public WebElement lnk_CriarUsuario;
+	private WebElement lnk_CriarUsuario;
 
-	public Inicio(WebDriver driver) {
+	public TelaInicial(WebDriver driver) {
 		this.driver = driver;
 	}
 	// buscar pela barra de pesquisa.

@@ -1,7 +1,7 @@
 package br.com.rsinet.hub_tdd.testes;
 
-import static br.com.rsinet.hub_tdd.inicio.TelaDeAbertura.FechandoJanela;
-import static br.com.rsinet.hub_tdd.inicio.TelaDeAbertura.inicioDriver;
+import static br.com.rsinet.hub_tdd.driver.DriverFactory.FechandoJanela;
+import static br.com.rsinet.hub_tdd.driver.DriverFactory.inicioDriver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -9,13 +9,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import br.com.rsinet.hub_tdd.inicio.Inicio;
 import br.com.rsinet.hub_tdd.pageObjects.Produto;
+import br.com.rsinet.hub_tdd.pageObjects.TelaInicial;
 
 public class BuscarLupaTeste {
 
 	private WebDriver driver;
-	Inicio telaInicial;
+	TelaInicial telaInicial;
 	Produto Produtos;
 
 	@BeforeMethod
@@ -24,7 +24,7 @@ public class BuscarLupaTeste {
 		// Usei a tecla de atalho para importa codigo (CTRL + SFHIT + M)
 		// driver = TelaDeAbertura.inicioDriver();
 		driver = inicioDriver();
-		telaInicial = PageFactory.initElements(driver, Inicio.class);
+		telaInicial = PageFactory.initElements(driver, TelaInicial.class);
 		Produtos = PageFactory.initElements(driver, Produto.class);
 		
 	}
