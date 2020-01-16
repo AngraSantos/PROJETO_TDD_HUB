@@ -2,16 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="314" started-at="2020-01-16T12:45:59 BRT" finished-at="2020-01-16T12:45:59 BRT">
+  <suite name="Default suite" duration-ms="28345" started-at="2020-01-16T20:23:03 BRT" finished-at="2020-01-16T20:23:31 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="314" started-at="2020-01-16T12:45:59 BRT" finished-at="2020-01-16T12:45:59 BRT">
-      <class name="br.com.rsinet.hub_tdd.reporter.ExtentReportDemo">
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:br.com.rsinet.hub_tdd.reporter.ExtentReportDemo@4bbfb90a]" name="loginTest" duration-ms="288" started-at="2020-01-16T12:45:59 BRT" finished-at="2020-01-16T12:45:59 BRT">
+    <test name="Default test" duration-ms="28345" started-at="2020-01-16T20:23:03 BRT" finished-at="2020-01-16T20:23:31 BRT">
+      <class name="br.com.rsinet.hub_tdd.testes.BuscarLupaTeste">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testes.BuscarLupaTeste@76707e36]" name="beforeMethod" is-config="true" duration-ms="22966" started-at="2020-01-16T20:23:03 BRT" finished-at="2020-01-16T20:23:26 BRT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-      </class> <!-- br.com.rsinet.hub_tdd.reporter.ExtentReportDemo -->
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="BuscarTeste()[pri:0, instance:br.com.rsinet.hub_tdd.testes.BuscarLupaTeste@76707e36]" name="BuscarTeste" duration-ms="4773" started-at="2020-01-16T20:23:26 BRT" finished-at="2020-01-16T20:23:31 BRT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BuscarTeste -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testes.BuscarLupaTeste@76707e36]" name="afterMethod" is-config="true" duration-ms="582" started-at="2020-01-16T20:23:31 BRT" finished-at="2020-01-16T20:23:31 BRT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- br.com.rsinet.hub_tdd.testes.BuscarLupaTeste -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

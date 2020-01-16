@@ -4,14 +4,26 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class Produto {
+public class pageObjectProduto {
 
 	//produto escolhido
 	@FindBy(how = How.ID, using = "2")
-	public WebElement lnk_laptopPavilion;
+	private WebElement lnk_laptopPavilion;
 	
 	@FindBy(how = How.ID, using = "21")
-	public WebElement lnk_AltoFalanteHP;
+	private WebElement lnk_AltoFalanteHP;
+	
+	
+	public void altoFalante() {
+		
+		lnk_AltoFalanteHP.click();
+		
+	}
+	public void laptop() {
+		
+		lnk_laptopPavilion.click();
+		
+	}
 	
 	
 }

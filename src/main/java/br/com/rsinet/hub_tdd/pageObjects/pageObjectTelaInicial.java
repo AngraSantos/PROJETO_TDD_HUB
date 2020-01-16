@@ -1,7 +1,6 @@
 package br.com.rsinet.hub_tdd.pageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,16 +9,9 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TelaInicial {
+public class pageObjectTelaInicial {
 
 	final WebDriver driver;
-
-
-	@FindBy(how = How.NAME, using = "mobile_search")
-	private WebElement txtbx_Buscar;
-
-	@FindBy(how = How.ID, using = "speakersTxt")
-	private WebElement lnk_CxDeSom;
 
 	@FindBy(how = How.ID, using = "menuUserSVGPath")
 	private WebElement btn_Login;
@@ -27,21 +19,28 @@ public class TelaInicial {
 	@FindBy(how = How.LINK_TEXT, using = "CREATE NEW ACCOUNT")
 	private WebElement lnk_CriarUsuario;
 
-	public TelaInicial(WebDriver driver) {
+	public pageObjectTelaInicial(WebDriver driver) {
 		this.driver = driver;
 	}
-	// buscar pela barra de pesquisa.
-	public void buscarCaixaDeTexto(String buscarProduto) {
-
-		txtbx_Buscar.sendKeys(buscarProduto);
-		txtbx_Buscar.sendKeys(Keys.RETURN);
-	}
-	// buscar pela tela inicial 
-	public void buscarTelaInicial() {
-		
-		lnk_CxDeSom.click();
-	}
-
+	
+//	
+//	// buscar pela barra de pesquisa.
+//	public void buscarCaixaDeTexto(String buscarProduto) {
+//
+//		txtbx_Buscar.sendKeys(buscarProduto);
+//		txtbx_Buscar.sendKeys(Keys.RETURN);
+//	}
+//	
+//	
+//	// buscar pela tela inicial 
+//	public void buscarTelaInicial() {
+//		
+//		lnk_CxDeSom.click();
+//	}
+//
+//	
+	
+	
 	//clicar no login e criar cadastro
 	public void clicarBotaoLogin() {
 
