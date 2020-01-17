@@ -36,9 +36,9 @@ public class ExtentReportDemo {
 		
 		logger2.log(Status.FAIL, "Title Verified");
 		
-		logger2.fail("Failed because of some issues", MediaEntityBuilder.createScreenCaptureFromPath("/Users/angra.souza/Documents/projetoTDD-master/logo.jpg").build());
+		logger2.fail("Falha devido a alguns problemas", MediaEntityBuilder.createScreenCaptureFromPath("/Users/angra.souza/Documents/projetoTDD-master/logo.jpg").build());
 		
-		logger2.pass("Failed because of some issues", MediaEntityBuilder.createScreenCaptureFromPath("/Users/angra.souza/Documento/projetoTDD-master/logo.jpg").build());
+		logger2.pass("Falha devido a alguns problemas", MediaEntityBuilder.createScreenCaptureFromPath("/Users/angra.souza/Documento/projetoTDD-master/logo.jpg").build());
 
 		extent .flush();
 	}		

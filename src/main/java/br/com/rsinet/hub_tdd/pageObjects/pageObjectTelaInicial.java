@@ -1,13 +1,12 @@
 package br.com.rsinet.hub_tdd.pageObjects;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
+import br.com.rsinet.hub_tdd.driver.DriverFactory;
 
 public class pageObjectTelaInicial {
 
@@ -45,11 +44,13 @@ public class pageObjectTelaInicial {
 	public void clicarBotaoLogin() {
 
 		btn_Login.click();
+		JavascriptExecutor executor = (JavascriptExecutor) DriverFactory.getDriver();
+		executor.executeScript("arguments[0].click();", lnk_CriarUsuario);
 
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("CREATE NEW ACCOUNT")));
-		Actions Action = new Actions(driver);
-		Action.moveToElement(lnk_CriarUsuario).click().perform();
-		lnk_CriarUsuario.click();
+//		WebDriverWait wait = new WebDriverWait(driver, 20);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("CREATE NEW ACCOUNT")));
+//		Actions Action = new Actions(driver);
+//		Action.moveToElement(lnk_CriarUsuario).click().perform();
+//		lnk_CriarUsuario.click();
 	}
 }

@@ -2,24 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28345" started-at="2020-01-16T20:23:03 BRT" finished-at="2020-01-16T20:23:31 BRT">
+  <suite name="Default suite" duration-ms="11928" started-at="2020-01-17T15:28:02 BRT" finished-at="2020-01-17T15:28:14 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28345" started-at="2020-01-16T20:23:03 BRT" finished-at="2020-01-16T20:23:31 BRT">
-      <class name="br.com.rsinet.hub_tdd.testes.BuscarLupaTeste">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testes.BuscarLupaTeste@76707e36]" name="beforeMethod" is-config="true" duration-ms="22966" started-at="2020-01-16T20:23:03 BRT" finished-at="2020-01-16T20:23:26 BRT">
+    <test name="Default test" duration-ms="11928" started-at="2020-01-17T15:28:02 BRT" finished-at="2020-01-17T15:28:14 BRT">
+      <class name="br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro@76707e36]" name="beforeMethod" is-config="true" duration-ms="7155" started-at="2020-01-17T15:28:02 BRT" finished-at="2020-01-17T15:28:09 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="BuscarTeste()[pri:0, instance:br.com.rsinet.hub_tdd.testes.BuscarLupaTeste@76707e36]" name="BuscarTeste" duration-ms="4773" started-at="2020-01-16T20:23:26 BRT" finished-at="2020-01-16T20:23:31 BRT">
+        <test-method status="PASS" signature="deveCadastrarUmUsuarioComErro()[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro@76707e36]" name="deveCadastrarUmUsuarioComErro" duration-ms="3382" started-at="2020-01-17T15:28:09 BRT" finished-at="2020-01-17T15:28:12 BRT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BuscarTeste -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testes.BuscarLupaTeste@76707e36]" name="afterMethod" is-config="true" duration-ms="582" started-at="2020-01-16T20:23:31 BRT" finished-at="2020-01-16T20:23:31 BRT">
+        </test-method> <!-- deveCadastrarUmUsuarioComErro -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro@76707e36]" name="afterMethod" is-config="true" duration-ms="1364" started-at="2020-01-17T15:28:13 BRT" finished-at="2020-01-17T15:28:14 BRT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=deveCadastrarUmUsuarioComErro status=SUCCESS method=CadastrarTesteComErro.deveCadastrarUmUsuarioComErro()[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro@76707e36] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- br.com.rsinet.hub_tdd.testes.BuscarLupaTeste -->
+      </class> <!-- br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

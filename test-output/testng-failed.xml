@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.hub_tdd.testes.ExtentReportDemoTeste">
+      <class name="br.com.rsinet.hub_tdd.testes.CadastrarTesteComSucesso">
         <methods>
-          <include name="loginTest"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
+          <include name="deveCadastrarUmUsuarioComSucesso"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- br.com.rsinet.hub_tdd.testes.ExtentReportDemoTeste -->
+      </class> <!-- br.com.rsinet.hub_tdd.testes.CadastrarTesteComSucesso -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -25,7 +25,7 @@ public class ExtentReportDemoTeste {
 	@BeforeMethod
 	public void setup() {
 		
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/report_automacao1.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/report_automacaooo.html");
 		
 		extent = new ExtentReports();
 		
@@ -40,6 +40,8 @@ public class ExtentReportDemoTeste {
 		driver=new ChromeDriver();
 
 		driver.get("http://www.google.com.br");
+	
+		
 		System.out.println("title is " + driver.getTitle());
 		
 		Assert.assertTrue(driver.getTitle().contains("Angra"));
@@ -48,9 +50,10 @@ public class ExtentReportDemoTeste {
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException {
 		
-		if (result.getStatus()==ITestResult.FAILURE)
+		if (result.getStatus() == ITestResult.FAILURE)
 		{
 			String temp = Utilitario.getScreenshot(driver);
+			
 			logger.fail(result.getThrowable().getMessage(),MediaEntityBuilder.createScreenCaptureFromPath(temp).build());		
 		}
 		
