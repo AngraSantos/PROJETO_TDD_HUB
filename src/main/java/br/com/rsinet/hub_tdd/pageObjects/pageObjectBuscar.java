@@ -6,23 +6,34 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class pageObjectBuscar {
-	
-	//tela inicial por click
+
+	// tela inicial por click
 	@FindBy(how = How.ID, using = "speakersTxt")
 	private WebElement lnk_CxDeSom;
-	
-	//busca pela lupa
+
+	// busca pela lupa
 	@FindBy(how = How.NAME, using = "mobile_search")
 	private WebElement txtbx_Buscar;
-	
-	public void buscarPorClick () {
-		
+
+	@FindBy(how = How.ID, using = "details_10")
+	private WebElement lnk_laptopEliteBookErro;
+
+	public void deveClicarEmAlgumProdutoDaTelaInicialComSucesso() {
+
 		lnk_CxDeSom.click();
 	}
-	
-	public void buscandoPelaLupa (String buscarProduto) {
-		
+
+	public void deveBuscarAlgumProdutoPelaLupa(String buscarProduto) {
+
 		txtbx_Buscar.sendKeys(buscarProduto);
-		txtbx_Buscar.sendKeys(Keys.RETURN);
+		txtbx_Buscar.sendKeys(Keys.ENTER);
+
 	}
+
+	public void deveClicarEmAlgumProdutoDaTelaInicialComErro() {
+
+		lnk_laptopEliteBookErro.click();
+
+	}
+
 }

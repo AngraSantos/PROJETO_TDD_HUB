@@ -1,29 +1,41 @@
 package br.com.rsinet.hub_tdd.pageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import br.com.rsinet.hub_tdd.driver.DriverFactory;
 
 public class pageObjectProduto {
-
-	//produto escolhido
+	
+	private WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 20);
+	
+	// produto escolhido
+	
 	@FindBy(how = How.ID, using = "2")
 	private WebElement lnk_laptopPavilion;
-	
+
 	@FindBy(how = How.ID, using = "21")
-	private WebElement lnk_AltoFalanteHP;
-	
-	
+	private WebElement lnk_altoFalanteHP;
+
 	public void altoFalante() {
+
+		wait.until(ExpectedConditions.elementToBeClickable(lnk_altoFalanteHP));
 		
-		lnk_AltoFalanteHP.click();
-		
+		JavascriptExecutor executor = (JavascriptExecutor) DriverFactory.getDriver();
+		executor.executeScript("arguments[0].click();", lnk_altoFalanteHP);
+
 	}
-	public void laptop() {
-		
-		lnk_laptopPavilion.click();
-		
-	}
+
+	public void laptop15z() {
+
+		wait.until(ExpectedConditions.elementToBeClickable(lnk_laptopPavilion));
 	
+		JavascriptExecutor executor = (JavascriptExecutor) DriverFactory.getDriver();
+		executor.executeScript("arguments[0].click();", lnk_laptopPavilion);
+	}	
 	
 }

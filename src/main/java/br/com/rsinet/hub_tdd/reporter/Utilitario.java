@@ -9,7 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class Utilitario {
-
+	
 	public static String getScreenshot(WebDriver driver) {
 
 		TakesScreenshot ts = (TakesScreenshot) driver;

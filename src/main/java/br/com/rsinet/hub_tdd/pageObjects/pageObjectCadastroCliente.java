@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.com.rsinet.hub_tdd.utilitarios.ExcelUtilitarios;
+import br.com.rsinet.hub_tdd.excel.ExcelUtilitarios;
 
 public class pageObjectCadastroCliente {
 
@@ -60,7 +60,7 @@ public class pageObjectCadastroCliente {
 	@FindBy(how = How.ID, using = "register_btnundefined")
 	private WebElement btn_Registrar;
 
-	// cadastro de cliente
+	// cadastro de cliente valido
 	public void preenchendoCadastroValido(WebDriver driver) throws Exception {
 
 		String usuario = ExcelUtilitarios.getCellData(1, 0);
@@ -101,11 +101,11 @@ public class pageObjectCadastroCliente {
 		select_CheckBox.click();
 		btn_Registrar.click();
 
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.urlToBe("http://www.advantageonlineshopping.com/#/"));
 
 	}
-
+//cadastro do cliente invalido
 	public void preenchendoCadastroInvalido(WebDriver driver) throws Exception {
 
 		String usuario = ExcelUtilitarios.getCellData(2, 0);

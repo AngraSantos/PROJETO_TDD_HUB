@@ -2,31 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11928" started-at="2020-01-17T15:28:02 BRT" finished-at="2020-01-17T15:28:14 BRT">
+  <suite name="Default suite" duration-ms="16973" started-at="2020-01-19T13:30:33 BRT" finished-at="2020-01-19T13:30:50 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11928" started-at="2020-01-17T15:28:02 BRT" finished-at="2020-01-17T15:28:14 BRT">
-      <class name="br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro@76707e36]" name="beforeMethod" is-config="true" duration-ms="7155" started-at="2020-01-17T15:28:02 BRT" finished-at="2020-01-17T15:28:09 BRT">
+    <test name="Default test" duration-ms="16973" started-at="2020-01-19T13:30:33 BRT" finished-at="2020-01-19T13:30:50 BRT">
+      <class name="br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso@76707e36]" name="beforeMethod" is-config="true" duration-ms="9111" started-at="2020-01-19T13:30:33 BRT" finished-at="2020-01-19T13:30:42 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="deveCadastrarUmUsuarioComErro()[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro@76707e36]" name="deveCadastrarUmUsuarioComErro" duration-ms="3382" started-at="2020-01-17T15:28:09 BRT" finished-at="2020-01-17T15:28:12 BRT">
+        <test-method status="PASS" signature="BuscandoTeste()[pri:0, instance:br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso@76707e36]" name="BuscandoTeste" duration-ms="6748" started-at="2020-01-19T13:30:42 BRT" finished-at="2020-01-19T13:30:49 BRT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deveCadastrarUmUsuarioComErro -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro@76707e36]" name="afterMethod" is-config="true" duration-ms="1364" started-at="2020-01-17T15:28:13 BRT" finished-at="2020-01-17T15:28:14 BRT">
+        </test-method> <!-- BuscandoTeste -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso@76707e36]" name="afterMethod" is-config="true" duration-ms="1088" started-at="2020-01-19T13:30:49 BRT" finished-at="2020-01-19T13:30:50 BRT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=deveCadastrarUmUsuarioComErro status=SUCCESS method=CadastrarTesteComErro.deveCadastrarUmUsuarioComErro()[pri:0, instance:br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro@76707e36] output={null}]]]>
+                <![CDATA[[TestResult name=BuscandoTeste status=SUCCESS method=CenarioDeBuscaPelaTelaIncialComSucesso.BuscandoTeste()[pri:0, instance:br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso@76707e36] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- br.com.rsinet.hub_tdd.testes.CadastrarTesteComErro -->
+      </class> <!-- br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

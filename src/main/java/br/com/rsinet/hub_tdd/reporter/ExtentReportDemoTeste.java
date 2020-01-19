@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_tdd.testes;
+package br.com.rsinet.hub_tdd.reporter;
 
 import java.io.IOException;
 
@@ -14,8 +14,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
-import br.com.rsinet.hub_tdd.reporter.Utilitario;
 
 public class ExtentReportDemoTeste {
 	ExtentReports extent;

@@ -1,8 +1,7 @@
-package br.com.rsinet.hub_tdd.testes;
+package br.com.rsinet.hub_tdd.testesNegativos;
 
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.FechandoJanela;
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.inicioDriver;
-import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
@@ -19,63 +18,66 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import br.com.rsinet.hub_tdd.pageObjects.pageObjectCadastroCliente;
+import br.com.rsinet.hub_tdd.pageObjects.pageObjectBuscar;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
 import br.com.rsinet.hub_tdd.reporter.Utilitario;
-import br.com.rsinet.hub_tdd.utilitarios.ExcelUtilitarios;
 
-public class CadastrarTesteComSucesso {
+public class CenarioDeBuscaPelaTelaIncialComErro {
 
 	private WebDriver driver;
-	pageObjectCadastroCliente cadastroCliente;
+
+	pageObjectBuscar buscando;
 	pageObjectTelaInicial telaInicial;
 	ExtentReports extent;
 	ExtentTest logger;
 
 	@BeforeMethod
-	public void beforeMethod() throws Exception {
+	public void beforeMethod() {
 
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/cadastroPositivo.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/BuscaPelaTelaNegativa.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
-		logger = extent.createTest("Teste Cadastro positivo");
+		logger = extent.createTest("Teste de busca pela tela Negativa");
 
 		driver = inicioDriver();
-		telaInicial = PageFactory.initElements(driver, pageObjectTelaInicial.class);
-		cadastroCliente = PageFactory.initElements(driver, pageObjectCadastroCliente.class);
-		ExcelUtilitarios.setExcelFile(
-				"C:\\Users\\angra.souza\\Desktop\\ToolsQAtest\\TDD_Projeto_HUB\\dadosCadastro.xlsx", "Cadastro");
+		buscando = PageFactory.initElements(driver, pageObjectBuscar.class);
 
 	}
 
 	@Test
-	public void deveCadastrarUmUsuarioComSucesso() throws Exception {
+	public void BuscandoTeste() throws Exception {
 
-		telaInicial.clicarBotaoLogin();
-		cadastroCliente.preenchendoCadastroValido(driver);
+		buscando.deveClicarEmAlgumProdutoDaTelaInicialComErro();
 
-		assertTrue(driver.getPageSource().contains(ExcelUtilitarios.getCellData(1, 0)));
+		/*
+		 * O wait não estava dando o tempo de espera nesta linha, que serviria para
+		 * tirar o print da tela, então usei o Thread.sleep
+		 */
+		
+		Thread.sleep(3000);
+
 	}
 
 	@AfterMethod
 	public void afterMethod(ITestResult result) throws IOException {
 
 		if (result.getStatus() == ITestResult.SUCCESS) {
+
 			String temp = Utilitario.getScreenshot(driver);
 
 			logger.pass("Efetuado com Sucesso: ", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 
 		} else if (result.getStatus() == ITestResult.FAILURE) {
+
 			String temp = Utilitario.getScreenshot(driver);
 
 			logger.fail("Ocorreu um erro: ", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-
 		}
 
-		logger.log(Status.INFO, "Login to amazon");
+		logger.log(Status.INFO, "Busca pela tela incial");
 
-		logger.log(Status.PASS, "Title verified");
-		
+		logger.log(Status.PASS, "Concluido");
+
 		extent.flush();
 
 		FechandoJanela();

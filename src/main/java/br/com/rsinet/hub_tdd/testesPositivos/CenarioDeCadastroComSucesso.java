@@ -1,8 +1,8 @@
-package br.com.rsinet.hub_tdd.testes;
+package br.com.rsinet.hub_tdd.testesPositivos;
 
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.FechandoJanela;
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.inicioDriver;
-import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
@@ -19,12 +19,12 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import br.com.rsinet.hub_tdd.excel.ExcelUtilitarios;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectCadastroCliente;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
 import br.com.rsinet.hub_tdd.reporter.Utilitario;
-import br.com.rsinet.hub_tdd.utilitarios.ExcelUtilitarios;
 
-public class CadastrarTesteComErro {
+public class CenarioDeCadastroComSucesso {
 
 	private WebDriver driver;
 	pageObjectCadastroCliente cadastroCliente;
@@ -35,10 +35,10 @@ public class CadastrarTesteComErro {
 	@BeforeMethod
 	public void beforeMethod() throws Exception {
 
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/cadastroNegativo.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/cadastroPositivo.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
-		logger = extent.createTest("Teste Cadastro Negativo");
+		logger = extent.createTest("Teste Cadastro positivo");
 
 		driver = inicioDriver();
 		telaInicial = PageFactory.initElements(driver, pageObjectTelaInicial.class);
@@ -49,34 +49,33 @@ public class CadastrarTesteComErro {
 	}
 
 	@Test
-	public void deveCadastrarUmUsuarioComErro() throws Exception {
+	public void deveCadastrarUmUsuarioComSucesso() throws Exception {
 
 		telaInicial.clicarBotaoLogin();
-		cadastroCliente.preenchendoCadastroInvalido(driver);
+		cadastroCliente.preenchendoCadastroValido(driver);
 
-		
-		assertEquals(driver.getCurrentUrl(), "http://www.advantageonlineshopping.com/#/register");
-
+		assertTrue(driver.getPageSource().contains(ExcelUtilitarios.getCellData(1, 0)));
 	}
 
 	@AfterMethod
 	public void afterMethod(ITestResult result) throws IOException {
 
-		if (result.getStatus() == ITestResult.FAILURE) {
+		if (result.getStatus() == ITestResult.SUCCESS) {
 			String temp = Utilitario.getScreenshot(driver);
 
-			logger.fail(result.getThrowable().getMessage(),
-					MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-		} else if (result.getStatus() == ITestResult.SUCCESS) {
+			logger.pass("Efetuado com Sucesso: ", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+
+		} else if (result.getStatus() == ITestResult.FAILURE) {
 			String temp = Utilitario.getScreenshot(driver);
 
-			logger.pass("Sucesso", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+			logger.fail("Ocorreu um erro: ", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+
 		}
 
-		logger.log(Status.INFO, "Login to amazon");
+		logger.log(Status.INFO, "Cadastro do cliente");
 
-		logger.log(Status.PASS, "Title verified");
-
+		logger.log(Status.PASS, "Concluido");
+		
 		extent.flush();
 
 		FechandoJanela();
