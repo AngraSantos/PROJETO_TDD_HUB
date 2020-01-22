@@ -13,13 +13,12 @@ public class pageObjectProduto {
 	
 	private WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 20);
 	
-	// produto escolhido
-	
 	@FindBy(how = How.ID, using = "2")
 	private WebElement lnk_laptopPavilion;
 
 	@FindBy(how = How.ID, using = "21")
 	private WebElement lnk_altoFalanteHP;
+	
 
 	public void altoFalante() {
 
@@ -27,7 +26,6 @@ public class pageObjectProduto {
 		
 		JavascriptExecutor executor = (JavascriptExecutor) DriverFactory.getDriver();
 		executor.executeScript("arguments[0].click();", lnk_altoFalanteHP);
-
 	}
 
 	public void laptop15z() {

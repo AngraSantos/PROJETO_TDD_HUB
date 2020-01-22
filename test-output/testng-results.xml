@@ -2,31 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16973" started-at="2020-01-19T13:30:33 BRT" finished-at="2020-01-19T13:30:50 BRT">
+  <suite name="Default suite" duration-ms="15564" started-at="2020-01-21T23:27:35 BRT" finished-at="2020-01-21T23:27:51 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16973" started-at="2020-01-19T13:30:33 BRT" finished-at="2020-01-19T13:30:50 BRT">
-      <class name="br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso@76707e36]" name="beforeMethod" is-config="true" duration-ms="9111" started-at="2020-01-19T13:30:33 BRT" finished-at="2020-01-19T13:30:42 BRT">
+    <test name="Default test" duration-ms="15564" started-at="2020-01-21T23:27:35 BRT" finished-at="2020-01-21T23:27:51 BRT">
+      <class name="br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaDeProdutoPelaLupaComErro">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaDeProdutoPelaLupaComErro@76707e36]" name="beforeMethod" is-config="true" duration-ms="7244" started-at="2020-01-21T23:27:35 BRT" finished-at="2020-01-21T23:27:42 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="BuscandoTeste()[pri:0, instance:br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso@76707e36]" name="BuscandoTeste" duration-ms="6748" started-at="2020-01-19T13:30:42 BRT" finished-at="2020-01-19T13:30:49 BRT">
+        <test-method status="PASS" signature="deveBuscarUmProdutoPelaLupa()[pri:0, instance:br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaDeProdutoPelaLupaComErro@76707e36]" name="deveBuscarUmProdutoPelaLupa" duration-ms="7204" started-at="2020-01-21T23:27:42 BRT" finished-at="2020-01-21T23:27:50 BRT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BuscandoTeste -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso@76707e36]" name="afterMethod" is-config="true" duration-ms="1088" started-at="2020-01-19T13:30:49 BRT" finished-at="2020-01-19T13:30:50 BRT">
+        </test-method> <!-- deveBuscarUmProdutoPelaLupa -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaDeProdutoPelaLupaComErro@76707e36]" name="afterMethod" is-config="true" duration-ms="1086" started-at="2020-01-21T23:27:50 BRT" finished-at="2020-01-21T23:27:51 BRT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=BuscandoTeste status=SUCCESS method=CenarioDeBuscaPelaTelaIncialComSucesso.BuscandoTeste()[pri:0, instance:br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso@76707e36] output={null}]]]>
+                <![CDATA[[TestResult name=deveBuscarUmProdutoPelaLupa status=SUCCESS method=CenarioDeBuscaDeProdutoPelaLupaComErro.deveBuscarUmProdutoPelaLupa()[pri:0, instance:br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaDeProdutoPelaLupaComErro@76707e36] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaIncialComSucesso -->
+      </class> <!-- br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaDeProdutoPelaLupaComErro -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

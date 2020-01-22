@@ -2,9 +2,11 @@ package br.com.rsinet.hub_tdd.testesNegativos;
 
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.FechandoJanela;
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.inicioDriver;
+import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
@@ -18,7 +20,6 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import br.com.rsinet.hub_tdd.pageObjects.pageObjectBuscar;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
 import br.com.rsinet.hub_tdd.reporter.Utilitario;
 
@@ -26,10 +27,10 @@ public class CenarioDeBuscaPelaTelaIncialComErro {
 
 	private WebDriver driver;
 
-	pageObjectBuscar buscando;
-	pageObjectTelaInicial telaInicial;
+	private pageObjectTelaInicial telaInicial;
 	ExtentReports extent;
 	ExtentTest logger;
+	JavascriptExecutor js;
 
 	@BeforeMethod
 	public void beforeMethod() {
@@ -40,22 +41,20 @@ public class CenarioDeBuscaPelaTelaIncialComErro {
 		logger = extent.createTest("Teste de busca pela tela Negativa");
 
 		driver = inicioDriver();
-		buscando = PageFactory.initElements(driver, pageObjectBuscar.class);
+		telaInicial = PageFactory.initElements(driver, pageObjectTelaInicial.class);
 
 	}
 
 	@Test
 	public void BuscandoTeste() throws Exception {
-
-		buscando.deveClicarEmAlgumProdutoDaTelaInicialComErro();
-
-		/*
-		 * O wait não estava dando o tempo de espera nesta linha, que serviria para
-		 * tirar o print da tela, então usei o Thread.sleep
-		 */
 		
-		Thread.sleep(3000);
+		telaInicial.deveClicarEmAlgumProdutoDaTelaInicialComErro();
 
+		js = (JavascriptExecutor) driver;
+		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 2000);");
+
+		String url = driver.getCurrentUrl();		
+		assertTrue(url.contains("http://www.advantageonlineshopping.com/#/product/10"));
 	}
 
 	@AfterMethod

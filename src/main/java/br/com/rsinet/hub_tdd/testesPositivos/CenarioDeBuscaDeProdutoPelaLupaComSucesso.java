@@ -6,6 +6,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,7 +22,6 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.hub_tdd.excel.ExcelUtilitarios;
-import br.com.rsinet.hub_tdd.pageObjects.pageObjectBuscar;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectProduto;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
 import br.com.rsinet.hub_tdd.reporter.Utilitario;
@@ -32,7 +32,6 @@ public class CenarioDeBuscaDeProdutoPelaLupaComSucesso {
 
 	pageObjectTelaInicial telaInicial;
 	pageObjectProduto Produtos;
-	pageObjectBuscar buscando;
 	ExtentReports extent;
 	ExtentTest logger;
 	WebDriverWait wait;
@@ -40,41 +39,36 @@ public class CenarioDeBuscaDeProdutoPelaLupaComSucesso {
 	@BeforeMethod
 	public void beforeMethod() throws Exception {
 	
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/BuscaPositiva.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/BuscaPelaLupaPositiva.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("Teste de busca positiva");
 
 		// Usei a tecla de atalho para importa codigo (CTRL + SFHIT + M)
 		// driver = TelaDeAbertura.inicioDriver();
+		
 		driver = inicioDriver();
 		telaInicial = PageFactory.initElements(driver, pageObjectTelaInicial.class);
 		Produtos = PageFactory.initElements(driver, pageObjectProduto.class);
-		buscando = PageFactory.initElements(driver, pageObjectBuscar.class);
 		ExcelUtilitarios.setExcelFile(
-				"C:\\Users\\angra.souza\\Desktop\\ToolsQAtest\\TDD_Projeto_HUB\\dadosCadastro.xlsx", "Produto");
+				"C:\\Users\\angra.souza\\Desktop\\dadosCadastro.xlsx", "Produto");
 		wait = new WebDriverWait(driver, 10);
 	}
 
 	@Test
 	public void deveBuscarUmProdutoPelaLupa() throws Exception {
 
-		buscando.deveBuscarAlgumProdutoPelaLupa("laptop");
+		telaInicial.deveBuscarAlgumProdutoPelaLupa("laptop");
 		Produtos.laptop15z();
-		
-		/*
-		 * O wait não estava dando o tempo de espera nesta linha, que serviria para
-		 * tirar o print da tela, então usei o Thread.sleep
-		 */
-		
-		Thread.sleep(3000);
-		
-//		wait.until(ExpectedConditions.urlToBe("http://www.advantageonlineshopping.com/#/product/2?viewAll=laptop"));
-//		nao funciona com o wait		
-//
 
-		assertTrue(driver.getPageSource().contains(ExcelUtilitarios.getCellData(1, 0)));
-	
+
+		String url = driver.getCurrentUrl();		
+		assertTrue(url.contains("http://www.advantageonlineshopping.com/#/product/2?viewAll=laptop"));
+		
+		JavascriptExecutor js;
+		js = (JavascriptExecutor) driver;
+		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 3000);");
+		
 	}
 
 	@AfterMethod

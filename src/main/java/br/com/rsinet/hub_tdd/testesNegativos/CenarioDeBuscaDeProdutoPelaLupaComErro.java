@@ -7,6 +7,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,52 +23,46 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import br.com.rsinet.hub_tdd.pageObjects.pageObjectBuscar;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
 import br.com.rsinet.hub_tdd.reporter.Utilitario;
 
 public class CenarioDeBuscaDeProdutoPelaLupaComErro {
 
 	private WebDriver driver;
-	
-	pageObjectTelaInicial telaInicial;
-	pageObjectBuscar buscando;
+
+	private pageObjectTelaInicial telaInicial;
+	private WebDriverWait wait;
 	ExtentReports extent;
 	ExtentTest logger;
-	WebDriverWait wait;
+	JavascriptExecutor js;
 
 	@BeforeMethod
 	public void beforeMethod() throws Exception {
 
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/BuscaNegativa.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/BuscaPelaLupaNegativa.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("Teste de busca pela lupa negativa");
 
 		// Usei a tecla de atalho para importa codigo (CTRL + SFHIT + M)
 		// driver = TelaDeAbertura.inicioDriver();
-
 		driver = inicioDriver();
 		telaInicial = PageFactory.initElements(driver, pageObjectTelaInicial.class);
-		buscando = PageFactory.initElements(driver, pageObjectBuscar.class);
 		wait = new WebDriverWait(driver, 10);
 	}
 
 	@Test
 	public void deveBuscarUmProdutoPelaLupa() throws Exception {
 
-		buscando.deveBuscarAlgumProdutoPelaLupa("HP ZBOOK G2 MOBILE WORKSTATION");
-		
+		telaInicial.deveBuscarAlgumProdutoPelaLupa("HP ZBOOK G2 MOBILE WORKSTATION");
+
 		Boolean busca = wait.until(ExpectedConditions.textToBePresentInElementLocated(
-				By.xpath("/html[1]/body[1]/div[3]/section[1]/article[1]/div[3]/div[1]/label[1]/span[1]"), "HP ZBOOK G2 MOBILE WORKSTATION"));
+				By.xpath("/html[1]/body[1]/div[3]/section[1]/article[1]/div[3]/div[1]/label[1]/span[1]"),
+				"HP ZBOOK G2 MOBILE WORKSTATION"));
 		assertTrue(busca);
 		
-		/*
-		 * O wait não estava dando o tempo de espera nesta linha, que serviria para
-		 * tirar o print da tela
-		 */
-		
-		Thread.sleep(2000);
+		js = (JavascriptExecutor) driver;
+		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 3000);");
 		
 	}
 

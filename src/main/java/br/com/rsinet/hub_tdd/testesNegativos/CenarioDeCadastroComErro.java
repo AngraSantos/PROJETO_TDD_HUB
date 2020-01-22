@@ -6,8 +6,10 @@ import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,7 +21,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import br.com.rsinet.hub_tdd.excel.ExcelUtilitarios;
+import br.com.rsinet.hub_tdd.excel.MassaDeDados;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectCadastroCliente;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
 import br.com.rsinet.hub_tdd.reporter.Utilitario;
@@ -27,15 +29,19 @@ import br.com.rsinet.hub_tdd.reporter.Utilitario;
 public class CenarioDeCadastroComErro {
 
 	private WebDriver driver;
-	pageObjectCadastroCliente cadastroCliente;
-	pageObjectTelaInicial telaInicial;
+	private pageObjectCadastroCliente cadastroCliente;
+	private pageObjectTelaInicial telaInicial;
 	ExtentReports extent;
 	ExtentTest logger;
+	WebDriverWait wait;
+	
+	MassaDeDados massaDeDadosCriarConta =  new MassaDeDados();
 
 	@BeforeMethod
-	public void beforeMethod() throws Exception {
+	public void beforeMethod() {
 
 		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/cadastroNegativo.html");
+		
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("Teste Cadastro Negativo");
@@ -43,20 +49,39 @@ public class CenarioDeCadastroComErro {
 		driver = inicioDriver();
 		telaInicial = PageFactory.initElements(driver, pageObjectTelaInicial.class);
 		cadastroCliente = PageFactory.initElements(driver, pageObjectCadastroCliente.class);
-		ExcelUtilitarios.setExcelFile(
-				"C:\\Users\\angra.souza\\Desktop\\ToolsQAtest\\TDD_Projeto_HUB\\dadosCadastro.xlsx", "Cadastro");
-
 	}
 
 	@Test
 	public void deveCadastrarUmUsuarioComErro() throws Exception {
 
 		telaInicial.clicarBotaoLogin();
-		cadastroCliente.preenchendoCadastroInvalido(driver);
-
+		telaInicial.clicarCriarUsuario();
+	
+		cadastroCliente.usuario();
+		cadastroCliente.email();
+		cadastroCliente.senha();
+		cadastroCliente.confirmeSenha();
 		
-		assertEquals(driver.getCurrentUrl(), "http://www.advantageonlineshopping.com/#/register");
+		cadastroCliente.primeiroNome();
+		cadastroCliente.ultimoNome();
+		cadastroCliente.telefone();
+		
+		cadastroCliente.pais();
+		cadastroCliente.cidade();
+		cadastroCliente.endereco();
+		cadastroCliente.estado();
+		cadastroCliente.cartaoPostal();
+		
+		cadastroCliente.clicarCheckBox();
+		cadastroCliente.clicarRegistrar();
 
+		String url = driver.getCurrentUrl();		
+		assertEquals(url, "http://www.advantageonlineshopping.com/#/register");
+	
+		JavascriptExecutor js;
+		js = (JavascriptExecutor) driver;
+		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 3000);");
+		
 	}
 
 	@AfterMethod

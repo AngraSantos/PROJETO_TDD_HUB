@@ -2,9 +2,11 @@ package br.com.rsinet.hub_tdd.testesPositivos;
 
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.FechandoJanela;
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.inicioDriver;
+import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
@@ -18,7 +20,6 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import br.com.rsinet.hub_tdd.pageObjects.pageObjectBuscar;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectProduto;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
 import br.com.rsinet.hub_tdd.reporter.Utilitario;
@@ -27,11 +28,11 @@ public class CenarioDeBuscaPelaTelaIncialComSucesso {
 
 	private WebDriver driver;
 
-	pageObjectBuscar buscando;
 	pageObjectTelaInicial telaInicial;
 	ExtentReports extent;
 	ExtentTest logger;
 	pageObjectProduto produto;
+	JavascriptExecutor js;
 
 	@BeforeMethod
 	public void beforeMethod() {
@@ -42,23 +43,22 @@ public class CenarioDeBuscaPelaTelaIncialComSucesso {
 		logger = extent.createTest("Teste de busca pela tela Positiva");
 
 		driver = inicioDriver();
-		buscando = PageFactory.initElements(driver, pageObjectBuscar.class);
 		produto = PageFactory.initElements(driver, pageObjectProduto.class);
+		telaInicial = PageFactory.initElements(driver, pageObjectTelaInicial.class);
 
 	}
 
 	@Test
 	public void BuscandoTeste() throws Exception {
 
-		buscando.deveClicarEmAlgumProdutoDaTelaInicialComSucesso();
+		telaInicial.deveClicarEmAlgumProdutoDaTelaInicialComSucesso();
 		produto.altoFalante();
-
-		/*
-		 * O wait não estava dando o tempo de espera nesta linha, que serviria para
-		 * tirar o print da tela, então usei o Thread.sleep
-		 */
 		
-		Thread.sleep(3000);
+		String url = driver.getCurrentUrl();		
+		assertEquals(url, "http://www.advantageonlineshopping.com/#/product/21");
+		
+		js = (JavascriptExecutor) driver;
+		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1000);");
 	}
 
 	@AfterMethod

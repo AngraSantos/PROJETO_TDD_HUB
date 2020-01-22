@@ -1,22 +1,16 @@
 package br.com.rsinet.hub_tdd.pageObjects;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.com.rsinet.hub_tdd.excel.ExcelUtilitarios;
+import br.com.rsinet.hub_tdd.excel.MassaDeDados;
 
 public class pageObjectCadastroCliente {
-
-	@FindBy(how = How.ID, using = "menuUserSVGPath")
-	private WebElement btn_Login;
-
-	@FindBy(how = How.LINK_TEXT, using = "CREATE NEW ACCOUNT")
-	private WebElement lnk_CriarUsuario;
+	
+	WebDriver driver;
+	MassaDeDados massaDeDados = new MassaDeDados();
 
 	@FindBy(how = How.NAME, using = "usernameRegisterPage")
 	private WebElement txtbx_Usuario;
@@ -60,94 +54,64 @@ public class pageObjectCadastroCliente {
 	@FindBy(how = How.ID, using = "register_btnundefined")
 	private WebElement btn_Registrar;
 
-	// cadastro de cliente valido
-	public void preenchendoCadastroValido(WebDriver driver) throws Exception {
-
-		String usuario = ExcelUtilitarios.getCellData(1, 0);
-		txtbx_Usuario.sendKeys(usuario);
-
-		String email = ExcelUtilitarios.getCellData(1, 1);
-		txtbx_Email.sendKeys(email);
-
-		String senha = ExcelUtilitarios.getCellData(1, 2);
-		txtbx_Senha.sendKeys(senha);
-
-		String confirmeSenha = ExcelUtilitarios.getCellData(1, 3);
-		txtbx_ConfirmeSenha.sendKeys(confirmeSenha);
-
-		String nome = ExcelUtilitarios.getCellData(1, 4);
-		txtbx_Nome.sendKeys(nome);
-
-		String ultimoNome = ExcelUtilitarios.getCellData(1, 5);
-		txtbx_UltimoNome.sendKeys(ultimoNome);
-
-		String telefone = ExcelUtilitarios.getCellData(1, 6);
-		txtbx_Telefone.sendKeys(telefone);
-
-		select_Pais.sendKeys("Brazil");
-
-		String cidade = ExcelUtilitarios.getCellData(1, 7);
-		txtbx_Cidade.sendKeys(cidade);
-
-		String endereco = ExcelUtilitarios.getCellData(1, 8);
-		txtbx_Endereco.sendKeys(endereco);
-
-		String estado = ExcelUtilitarios.getCellData(1, 9);
-		txtbx_Estado.sendKeys(estado);
-
-		String cartaoPostal = ExcelUtilitarios.getCellData(1, 10);
-		txtbx_CartaoPostal.sendKeys(cartaoPostal);
-
-		select_CheckBox.click();
-		btn_Registrar.click();
-
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.urlToBe("http://www.advantageonlineshopping.com/#/"));
-
+	public void page (WebDriver driver) {
+		this.driver = driver;
 	}
-//cadastro do cliente invalido
-	public void preenchendoCadastroInvalido(WebDriver driver) throws Exception {
 
-		String usuario = ExcelUtilitarios.getCellData(2, 0);
-		txtbx_Usuario.sendKeys(usuario);
+	public void usuario() throws Exception  {
+		txtbx_Usuario.sendKeys(massaDeDados.usuario());
+	}
+	
+	public void email() throws Exception {
+		txtbx_Email.sendKeys(massaDeDados.email());
+	}
 
-		String email = ExcelUtilitarios.getCellData(2, 1);
-		txtbx_Email.sendKeys(email);
+	public void senha() throws Exception {
+		txtbx_Senha.sendKeys(massaDeDados.senha());
+	}
 
-		String senha = ExcelUtilitarios.getCellData(2, 2);
-		txtbx_Senha.sendKeys(senha);
+	public void confirmeSenha() throws Exception {
+		txtbx_ConfirmeSenha.sendKeys(massaDeDados.confirmeSenha());
+	}
 
-		String confirmeSenha = ExcelUtilitarios.getCellData(2, 3);
-		txtbx_ConfirmeSenha.sendKeys(confirmeSenha);
+	public void primeiroNome() throws Exception {
+		txtbx_Nome.sendKeys(massaDeDados.primeiroNome());
+	}
 
-		String nome = ExcelUtilitarios.getCellData(2, 4);
-		txtbx_Nome.sendKeys(nome);
+	public void ultimoNome() throws Exception {
+		txtbx_UltimoNome.sendKeys(massaDeDados.ultimoNome());
+	}
 
-		String ultimoNome = ExcelUtilitarios.getCellData(2, 5);
-		txtbx_UltimoNome.sendKeys(ultimoNome);
+	public void telefone() throws Exception {
+		txtbx_Telefone.sendKeys(massaDeDados.telefone());
+	}
 
-		String telefone = ExcelUtilitarios.getCellData(2, 6);
-		txtbx_Telefone.sendKeys(telefone);
+	public void pais() throws Exception {
+		select_Pais.sendKeys(massaDeDados.pais());
+	}
 
-		select_Pais.sendKeys("Brazil");
+	public void cidade() throws Exception {
+		txtbx_Cidade.sendKeys(massaDeDados.cidade());
+	}
 
-		String cidade = ExcelUtilitarios.getCellData(2, 7);
-		txtbx_Cidade.sendKeys(cidade);
+	public void endereco() throws Exception {
+		txtbx_Endereco.sendKeys(massaDeDados.endereco());
+	}
 
-		String endereco = ExcelUtilitarios.getCellData(2, 8);
-		txtbx_Endereco.sendKeys(endereco);
+	public void estado() throws Exception {
+		txtbx_Estado.sendKeys(massaDeDados.estado());
+	}
 
-		String estado = ExcelUtilitarios.getCellData(2, 9);
-		txtbx_Estado.sendKeys(estado);
+	public void cartaoPostal() throws Exception {
+		txtbx_CartaoPostal.sendKeys(massaDeDados.cartaoPostal());
+	}
 
-		String cartaoPostal = ExcelUtilitarios.getCellData(2, 10);
-		txtbx_CartaoPostal.sendKeys(cartaoPostal);
-
+	public void clicarCheckBox() {
 		select_CheckBox.click();
-		btn_Registrar.click();
+	}
 
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("scrollBy(0, -200)", "");
+	public void clicarRegistrar() {
+		btn_Registrar.click();
 
 	}
 }
