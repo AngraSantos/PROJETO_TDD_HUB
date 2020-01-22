@@ -2,6 +2,7 @@ package br.com.rsinet.hub_tdd.testesPositivos;
 
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.FechandoJanela;
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.inicioDriver;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
@@ -76,12 +77,14 @@ public class CenarioDeCadastroComSucesso {
 		cadastroCliente.clicarCheckBox();
 		cadastroCliente.clicarRegistrar();
 		
-
-		String url = driver.getCurrentUrl();		
-		assertTrue(url.contains("http://www.advantageonlineshopping.com/#/"));
-
 		js = (JavascriptExecutor) driver;
 		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 3000);");
+		
+//
+		String url = driver.getCurrentUrl();		
+//		assertTrue(url.contains("http://www.advantageonlineshopping.com/#/"));
+		
+		assertEquals(url, "http://www.advantageonlineshopping.com/#/");
 		
 	}
 
