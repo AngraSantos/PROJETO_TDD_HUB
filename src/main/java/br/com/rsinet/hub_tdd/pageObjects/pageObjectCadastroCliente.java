@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.Select;
 
 import br.com.rsinet.hub_tdd.excel.MassaDeDados;
 
@@ -87,7 +88,8 @@ public class pageObjectCadastroCliente {
 	}
 
 	public void pais() throws Exception {
-		select_Pais.sendKeys(massaDeDados.pais());
+		Select select = new Select(select_Pais);
+		select.selectByVisibleText(massaDeDados.pais());
 	}
 
 	public void cidade() throws Exception {

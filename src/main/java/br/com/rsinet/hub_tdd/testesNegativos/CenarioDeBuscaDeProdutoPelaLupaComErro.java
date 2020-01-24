@@ -24,7 +24,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
-import br.com.rsinet.hub_tdd.reporter.Utilitario;
+import br.com.rsinet.hub_tdd.utilitario.Utilitario;
 
 public class CenarioDeBuscaDeProdutoPelaLupaComErro {
 
@@ -56,14 +56,10 @@ public class CenarioDeBuscaDeProdutoPelaLupaComErro {
 
 		telaInicial.deveBuscarAlgumProdutoPelaLupa("HP ZBOOK G2 MOBILE WORKSTATION");
 
-		Boolean busca = wait.until(ExpectedConditions.textToBePresentInElementLocated(
-				By.xpath("/html[1]/body[1]/div[3]/section[1]/article[1]/div[3]/div[1]/label[1]/span[1]"),
-				"HP ZBOOK G2 MOBILE WORKSTATION"));
-		assertTrue(busca);
-		
 		js = (JavascriptExecutor) driver;
 		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 3000);");
 		
+		assertTrue(driver.getPageSource().contains("No results for"));
 	}
 
 	@AfterMethod

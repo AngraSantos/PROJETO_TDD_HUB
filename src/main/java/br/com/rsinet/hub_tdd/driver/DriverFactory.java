@@ -24,7 +24,7 @@ public class DriverFactory {
 	public static WebDriver getDriver() {
 		return driver;
 	}
-	
+
 	public static void FechandoJanela() {
 
 		if (driver != null)

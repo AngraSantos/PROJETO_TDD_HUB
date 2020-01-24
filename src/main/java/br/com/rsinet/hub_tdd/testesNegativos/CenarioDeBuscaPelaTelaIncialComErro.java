@@ -2,6 +2,7 @@ package br.com.rsinet.hub_tdd.testesNegativos;
 
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.FechandoJanela;
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.inicioDriver;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
@@ -21,7 +22,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
-import br.com.rsinet.hub_tdd.reporter.Utilitario;
+import br.com.rsinet.hub_tdd.utilitario.Utilitario;
 
 public class CenarioDeBuscaPelaTelaIncialComErro {
 
@@ -54,7 +55,7 @@ public class CenarioDeBuscaPelaTelaIncialComErro {
 		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 2000);");
 
 		String url = driver.getCurrentUrl();		
-		assertTrue(url.contains("http://www.advantageonlineshopping.com/#/product/10"));
+		assertEquals(url,"http://www.advantageonlineshopping.com/#/product/10");
 	}
 
 	@AfterMethod

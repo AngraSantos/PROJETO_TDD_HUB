@@ -24,7 +24,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import br.com.rsinet.hub_tdd.excel.MassaDeDados;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectCadastroCliente;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
-import br.com.rsinet.hub_tdd.reporter.Utilitario;
+import br.com.rsinet.hub_tdd.utilitario.Utilitario;
 
 public class CenarioDeCadastroComErro {
 
@@ -34,6 +34,7 @@ public class CenarioDeCadastroComErro {
 	ExtentReports extent;
 	ExtentTest logger;
 	WebDriverWait wait;
+	JavascriptExecutor js;
 	
 	MassaDeDados massaDeDadosCriarConta =  new MassaDeDados();
 
@@ -78,7 +79,6 @@ public class CenarioDeCadastroComErro {
 		String url = driver.getCurrentUrl();		
 		assertEquals(url, "http://www.advantageonlineshopping.com/#/register");
 	
-		JavascriptExecutor js;
 		js = (JavascriptExecutor) driver;
 		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 3000);");
 		

@@ -22,7 +22,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectProduto;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
-import br.com.rsinet.hub_tdd.reporter.Utilitario;
+import br.com.rsinet.hub_tdd.utilitario.Utilitario;
 
 public class CenarioDeBuscaPelaTelaIncialComSucesso {
 

@@ -2,6 +2,7 @@ package br.com.rsinet.hub_tdd.testesPositivos;
 
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.FechandoJanela;
 import static br.com.rsinet.hub_tdd.driver.DriverFactory.inicioDriver;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
@@ -24,7 +25,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import br.com.rsinet.hub_tdd.excel.ExcelUtilitarios;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectProduto;
 import br.com.rsinet.hub_tdd.pageObjects.pageObjectTelaInicial;
-import br.com.rsinet.hub_tdd.reporter.Utilitario;
+import br.com.rsinet.hub_tdd.utilitario.Utilitario;
 
 public class CenarioDeBuscaDeProdutoPelaLupaComSucesso {
 
@@ -35,6 +36,7 @@ public class CenarioDeBuscaDeProdutoPelaLupaComSucesso {
 	ExtentReports extent;
 	ExtentTest logger;
 	WebDriverWait wait;
+	JavascriptExecutor jse;
 
 	@BeforeMethod
 	public void beforeMethod() throws Exception {
@@ -62,12 +64,12 @@ public class CenarioDeBuscaDeProdutoPelaLupaComSucesso {
 		Produtos.laptop15z();
 
 
-		String url = driver.getCurrentUrl();		
-		assertTrue(url.contains("http://www.advantageonlineshopping.com/#/product/2?viewAll=laptop"));
+		String url = driver.getCurrentUrl();	
+		assertEquals(url, "http://www.advantageonlineshopping.com/#/product/2?viewAll=laptop");
+
 		
-		JavascriptExecutor js;
-		js = (JavascriptExecutor) driver;
-		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 3000);");
+		jse = (JavascriptExecutor) driver;
+		jse.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 3000);");
 		
 	}
 
