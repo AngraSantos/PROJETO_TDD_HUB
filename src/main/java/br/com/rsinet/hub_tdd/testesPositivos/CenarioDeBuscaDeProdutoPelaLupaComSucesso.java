@@ -34,7 +34,7 @@ public class CenarioDeBuscaDeProdutoPelaLupaComSucesso {
 	private ExtentReports extent;
 	private ExtentTest logger;
 	private WebDriverWait wait;
-//	private JavascriptExecutor js;
+//	private JavascriptExecutor  js;
 
 	@BeforeMethod
 	public void beforeMethod() throws Exception {
