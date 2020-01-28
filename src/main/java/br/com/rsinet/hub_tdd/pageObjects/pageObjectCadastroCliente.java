@@ -10,7 +10,7 @@ import br.com.rsinet.hub_tdd.excel.MassaDeDados;
 
 public class pageObjectCadastroCliente {
 	
-	WebDriver driver;
+	private WebDriver driver;
 	MassaDeDados massaDeDados = new MassaDeDados();
 
 	@FindBy(how = How.NAME, using = "usernameRegisterPage")

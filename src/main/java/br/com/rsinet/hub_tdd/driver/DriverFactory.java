@@ -10,7 +10,6 @@ public class DriverFactory {
 	static WebDriver driver;
 
 	private DriverFactory() {
-
 	}
 
 	public static WebDriver inicioDriver() {
@@ -26,7 +25,6 @@ public class DriverFactory {
 	}
 
 	public static void FechandoJanela() {
-
 		if (driver != null)
 			driver.quit();
 		driver = null;

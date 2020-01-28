@@ -11,7 +11,7 @@ import br.com.rsinet.hub_tdd.driver.DriverFactory;
 
 public class pageObjectTelaInicial {
 
-	WebDriver driver;
+	private WebDriver driver;
 
 	@FindBy(how = How.NAME, using = "mobile_search")
 	private WebElement txtbx_Buscar;
