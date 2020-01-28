@@ -10,13 +10,13 @@
           <include name="deveCadastrarUmUsuarioComErro"/>
         </methods>
       </class> <!-- br.com.rsinet.hub_tdd.testesNegativos.CenarioDeCadastroComErro -->
-      <class name="br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaPelaTelaIncialComErro">
+      <class name="br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaPelaTelaInicialComErro">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
           <include name="BuscandoTeste"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaPelaTelaIncialComErro -->
+      </class> <!-- br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaPelaTelaInicialComErro -->
       <class name="br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaDeProdutoPelaLupaComSucesso">
         <methods>
           <include name="afterMethod"/>

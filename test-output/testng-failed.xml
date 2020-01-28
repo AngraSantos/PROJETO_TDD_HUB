@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite de Teste]">
+  <test thread-count="5" name="Automacao utilizando TDD(failed)">
     <classes>
+      <class name="br.com.rsinet.hub_tdd.testesNegativos.CenarioDeCadastroComErro">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="deveCadastrarUmUsuarioComErro"/>
+        </methods>
+      </class> <!-- br.com.rsinet.hub_tdd.testesNegativos.CenarioDeCadastroComErro -->
+      <class name="br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaPelaTelaInicialComErro">
+        <methods>
+          <include name="BuscandoTeste"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaPelaTelaInicialComErro -->
+      <class name="br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaDeProdutoPelaLupaComSucesso">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="deveBuscarUmProdutoPelaLupa"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaDeProdutoPelaLupaComSucesso -->
       <class name="br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaDeProdutoPelaLupaComErro">
         <methods>
           <include name="afterMethod"/>
@@ -10,6 +31,20 @@
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- br.com.rsinet.hub_tdd.testesNegativos.CenarioDeBuscaDeProdutoPelaLupaComErro -->
+      <class name="br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaInicialComSucesso">
+        <methods>
+          <include name="BuscandoTeste"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- br.com.rsinet.hub_tdd.testesPositivos.CenarioDeBuscaPelaTelaInicialComSucesso -->
+      <class name="br.com.rsinet.hub_tdd.testesPositivos.CenarioDeCadastroComSucesso">
+        <methods>
+          <include name="deveCadastrarUmUsuarioComSucesso"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- br.com.rsinet.hub_tdd.testesPositivos.CenarioDeCadastroComSucesso -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Automacao utilizando TDD(failed) -->
+</suite> <!-- Failed suite [Suite de Teste] -->

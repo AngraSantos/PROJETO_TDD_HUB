@@ -9,18 +9,15 @@ public class DriverFactory {
 
 	static WebDriver driver;
 
-	private DriverFactory() {
+	private  DriverFactory () {
 	}
 
 	public static WebDriver inicioDriver() {
-		if (driver == null)
+		if (driver == null) {
 			driver = new ChromeDriver();
 		driver.get("http:www.advantageonlineshopping.com/#/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		return driver;
-	}
-
-	public static WebDriver getDriver() {
+		}
 		return driver;
 	}
 

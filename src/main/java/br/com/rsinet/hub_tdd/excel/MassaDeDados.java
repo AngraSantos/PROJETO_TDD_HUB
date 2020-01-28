@@ -46,7 +46,7 @@ public class MassaDeDados {
 	}
 
 	public String cidade() throws Exception {
-		String cidade = ExcelUtilitarios.getCellData(2, 8);
+		String cidade = ExcelUtilitarios.getCellData(1, 8);
 		return cidade;
 	}
 
