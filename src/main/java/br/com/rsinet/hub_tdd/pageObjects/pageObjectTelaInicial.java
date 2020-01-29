@@ -28,6 +28,7 @@ public class pageObjectTelaInicial {
 	@FindBy(how = How.ID, using = "speakersTxt")
 	private WebElement lnk_CxDeSom;
 
+	/*metodo de usar o wait*/
 //	public void tempo(WebElement element, int tempo) {
 //		WebDriverWait wait = new WebDriverWait(driver, tempo);
 //		wait.until(ExpectedConditions.visibilityOf(element));
