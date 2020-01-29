@@ -38,7 +38,7 @@ public class CenarioDeBuscaDeProdutoPelaLupaComErro {
 	public void beforeMethod() throws Exception {
 
 		/* executando o report */
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/BuscaPelaLupaNegativa.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./target/BuscaPelaLupaNegativa.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("Teste de busca pela lupa negativa");

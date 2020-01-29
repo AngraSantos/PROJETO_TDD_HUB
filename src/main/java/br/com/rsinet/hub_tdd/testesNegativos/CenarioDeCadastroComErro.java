@@ -44,7 +44,7 @@ public class CenarioDeCadastroComErro {
 	public void beforeMethod() {
 
 		/* executando o report */
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/cadastroNegativo.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./target/cadastroNegativo.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("Teste Cadastro Negativo");

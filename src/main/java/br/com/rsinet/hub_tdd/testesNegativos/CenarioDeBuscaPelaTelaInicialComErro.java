@@ -38,7 +38,7 @@ public class CenarioDeBuscaPelaTelaInicialComErro {
 	public void beforeMethod() {
 		
 		/* executando o report */
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/BuscaPelaTelaNegativa.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./target/BuscaPelaTelaNegativa.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("Teste de busca pela tela Negativa");

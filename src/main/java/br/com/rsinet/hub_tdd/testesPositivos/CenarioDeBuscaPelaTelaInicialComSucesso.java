@@ -40,7 +40,7 @@ public class CenarioDeBuscaPelaTelaInicialComSucesso {
 	public void beforeMethod() {
 
 		/* executando o report */
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/BuscaPelaTelaPositiva.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./target/BuscaPelaTelaPositiva.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("Teste de busca pela tela Positiva");

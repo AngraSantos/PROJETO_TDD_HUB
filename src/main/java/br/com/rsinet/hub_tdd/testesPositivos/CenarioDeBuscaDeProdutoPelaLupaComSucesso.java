@@ -40,7 +40,7 @@ public class CenarioDeBuscaDeProdutoPelaLupaComSucesso {
 	public void beforeMethod() throws Exception {
 	
 		/* executando o report */
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/BuscaPelaLupaPositiva.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./target/BuscaPelaLupaPositiva.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("Teste de busca positiva");

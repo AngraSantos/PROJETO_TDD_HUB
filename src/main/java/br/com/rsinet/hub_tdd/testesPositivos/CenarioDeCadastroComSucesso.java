@@ -43,7 +43,7 @@ public class CenarioDeCadastroComSucesso {
 	public void beforeMethod() throws Exception {
 
 		/* executando o report */
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/cadastroPositivo.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./target/cadastroPositivo.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("Teste Cadastro positivo");
